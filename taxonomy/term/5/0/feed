@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://jodyhamilton.net"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Jody Hamilton - lullabot</title>
+ <link>http://jodyhamilton.net/taxonomy/term/5/0</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Project: OnlyAlumni.com</title>
+ <link>http://jodyhamilton.net/project-onlyalumnicom</link>
+ <description>&lt;p&gt;One project I&amp;#8217;m currently working on which is already live is &lt;a href=&quot;http://onlyalumni.com&quot; rel=&quot;nofollow&quot;&gt;OnlyAlummni.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Instead of having to build the entire site, I have a smart client who set up the site and had me work only on the trickier (fun) parts of this project.  OnlyAlumni is a social networking site with about 8000 colleges, fraternities and sororities which operate as Drupal organic groups.  This has been a great project for me to go much more in depth with &lt;a href=&quot;http://drupal.org/project/og&quot; rel=&quot;nofollow&quot;&gt;organic groups&lt;/a&gt; and related modules.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/project-onlyalumnicom&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/project-onlyalumnicom#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/featured-project">featured project</category>
+ <category domain="http://jodyhamilton.net/lullabot">lullabot</category>
+ <pubDate>Thu, 24 Jan 2008 11:38:21 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">8 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Lullabot trip - Portland</title>
+ <link>http://jodyhamilton.net/lullabot-trip-portland</link>
+ <description>&lt;p&gt;I just got back from Portland where I took &lt;a href=&quot;http://lullabot.com&quot; rel=&quot;nofollow&quot;&gt;Lullabot&lt;/a&gt;&amp;#8217;s advanced drupal development course.  Not only did the class take me to a wild new level of Drupalhood, but I was blown away by how great a city Portland is.  It made me feel the intense masochism of the act of living in Philadelphia.  Every detail was greeting me with unexpected good things, as opposed to Philly where every detail is just another slap in the face.  Free fast wireless in their airport.  Spotless trains coming every five minutes and asking you to pay on the honor system.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/lullabot-trip-portland&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/lullabot-trip-portland#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/lullabot">lullabot</category>
+ <pubDate>Mon, 14 Jan 2008 14:46:12 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">3 at http://jodyhamilton.net</guid>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Drupal Time-savers | Jody Hamilton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="sites/default/files/jodyhamilton_favicon.jpg" type="image/x-icon" />
+	<meta name = "description" content = "Jody Hamilton: drupal web development, songs, and various ravings" />
+    <link type="text/css" rel="stylesheet" media="all" href="sites/jodyhamilton.net/modules/codefilter/codefilter.css%3Fu.css" />
+<link type="text/css" rel="stylesheet" media="all" href="sites/jodyhamilton.net/files/css/e4c1a4c0a5e64291d3a82762a68e2614.css" />
+    <script type="text/javascript" src="sites/jodyhamilton.net/files/js/7e1313c45d01b7f39dcdabcb1607c862.js"></script>
+<script type="text/javascript">jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackDownload": "pdf|zip|mp3", "LegacyVersion": 0 }, "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/jodyhamilton.net/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "display_image_size": "", "overlay_opacity": "0.6", "use_alt_layout": false, "disable_zoom": false, "force_show_nav": false, "image_node_sizes": "(\\.thumbnail)", "trigger_image_classes": "img.inline,img.flickr-photo-img,img.flickr-photoset-img,img.image-img_assist_custom,img.thumbnail, img.image-thumbnail", "group_images": true, "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "node_link_text": "View Image Details", "node_link_target": false, "image_count": "Image !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return false;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close" } });</script>
+    <!--[if lt IE 7]>
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/jodyhamilton/fix-ie.css" />    <![endif]-->
+  </head>
+  <body>
+
+<!-- Layout -->
+
+    <div id="wrapper">
+     <div id="header">
+        <h1><a href="index.html" title="Jody Hamilton"><span>Jody Hamilton</span></a></h1>      </div> <!-- /header -->
+
+      <div id ="menu">
+		        <ul class="links primary-links"><li class="menu-172 first"><a href="about.html" title="About">About</a></li>
+
+<li class="menu-215 last"><a href="featured-project.html" title="">Projects</a></li>
+</ul>                                </div>
+
+      <div id="main"><div id="main-top"><div id="main-bottom">
+          <div class="breadcrumb"><a href="index.html">Home</a></div>                              <h2>Drupal Time-savers</h2>                                                  <div class="clear-block">
+            <div id="node-18" class="node clear-block">
+
+
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on February 5, 2008 - 7:35pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first"><a href="drupal.html" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_14 last"><a href="taxonomy/term/14.html" rel="tag" title="">firefox</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>If you work freelance like I do, you know that time is money.  I&#8217;m always trying to shave a few more seconds off my development time.  Here are a few tips and tricks that I constantly use:</p>
+
+<ul>
+<li>
+<h3>Firefox Wildcard Bookmarks</h3>
+<p>Set up some bookmarks with keywords shortcuts and wildcards.  I have a bookmark for the <a href="http://api.drupal.org/api/file/developer/topics/forms_api_reference.html/5">forms api reference</a> so that I only have to type &#8216;forms&#8217; to get to it.  I also used <a href="http://www.chapterthreellc.com/blog/josh_koenig/howto_creating_url_shortcut_drupal_api_documentation_firefox">this method</a> so that I can quickly look up api functions.  I used a similar wildcard bookmark for project pages.  Now if I&#8217;d like to see the <a href="http://drupal.org/project/views">views page</a> I simply type in &#8216;pr views&#8217;.  Not only does this save me a lot of time but it also encourages me to go check out modules I might have otherwise put off looking at since it seemed like a slight hassle previously.</p></li>
+<li>
+<h3>Drupal CVS shortcut</h3>
+<p>I check out a lot of modules from Drupal&#8217;s CVS.  With Drupal you can just about build a website as fast as you can check out modules.  Well, almost.  I constantly had to look up the terminal command for cvs checkout until finally I got wise and set up an alias.  On my Mac I did this by </p>
+<p>cd (go to your user home directory)<br />
+vi .bash_profile (edit your bash profile in a unix editor I am just not quite geeky enough to have mastered.  Alternatively, if you&#8217;ve set up Textmate properly you can do &#8216;mate .bash_profile&#8217;)<br />
+Now add the line: alias drcvs=&#8221;cvs -d :pserver:anonymous@cvs.drupal.org:/cvs/drupal checkout&#8221;</p>
+<p>Now when I want a module I type: drcvs -d {modulename} -r {version} contributions/modules/{modulename} .  This I can actually remember.</p></li>
+<li>
+<h3>Drupal navigation</h3>
+<p>You need to get into admin_menu and/or teleport modules.  I&#8217;m going to stop giving out links to every great module since by now you should have created your firefox wildcard project bookmark.</p></li>
+<li>
+<h3>Parallels (Mac)</h3>
+<p>Launching Parallels is faster than Bootcamp or getting up and turning on your old PC.  Personally I believe if you&#8217;ve so much as touched your client&#8217;s css that it is now your moral imperative to recheck everything in both IE6 and 7.  Bonus tip: <a href="http://tredosoft.com/Multiple_IE">run them both</a>.</p></li>
+<li>
+<h3>Firebug</h3>
+<p>Firebug is the best thing that ever happened to css as I&#8217;m sure you&#8217;re aware.  Make sure you check which line number of which css file you need to change and then use your text editor&#8217;s keyboard shortcut to go straight to that line.  I like to use Firebug for anything I might have previously used &#8216;view source&#8217; for as well.  You can make sure that new css or js file you added with drupal_add_css or drupal_add_js loaded properly on your page.  Find out your keyboard shortcut to go straight to inspect mode (mine is shift-command-c).  I constantly use inspect mode to take a look at the relevant markup.  Often if you need to find a theming function a Firebug glance at the markup will give you something to search for in your text editor.  It may also give you a hint as to the form_id you&#8217;re trying to hook_form_alter.</p></li>
+<li>
+<h3>Firefox search</h3>
+<p>Go to your Firefox preferences and under General:Accessibility check off &#8216;search for text when I start typing&#8217;.  Now you don&#8217;t need to hit command-f to search on the page.  When you go to admin/build/modules to enable your new module, just start typing the first few letters and you&#8217;ll jump down to it on the page.  Congratulations: you&#8217;ve just saved 200ms.  Well, everything adds up.</p></li>
+<li>
+<h3>Use your editor</h3>
+<p>Mine is Textmate (Mac only) and it&#8217;s pretty great.  Although you might be tempted to just type a little php in a block edit textarea or similar place, I find that this usually costs me more time than it saves because half the time I mess up a bracket somewhere.  If your block is fairly complex you&#8217;ll really be glad down the road (probably three minutes from now when you want to edit it) that you took the extra minute to call hook_block in your custom module.  If I really do just need to insert a little php, I still write it in my editor and then paste it in.  This spares me the otherwise inevitable debugging.  I think that doing things right is almost always faster than doing them fast and possibly having to debug them later.</p></li>
+<li>
+<h3>Submit a patch</h3>
+<p>This might not seem like a time-saving tip but I&#8217;ve come to believe it really is.  It turns out the only difference between being a frightful Drupal hacker and an esteemed Drupal contributor is whether or not you submitted a patch.  I used to always hear &#8220;don&#8217;t hack Drupal&#8221; and wonder how the hell these people thought that was possible when surely we all know there are dark corners of code where the override and hook systems never reach.  Finally I realized they probably just submit a patch and call it &#8216;contributing&#8217; instead of &#8216;hacking&#8217;.  Actually I didn&#8217;t realize this until some point after I joined them.  </p>
+<p>When you get in the habit of submitting a patch immediately after debugging or adding a new feature to a module, it will only take you a few minutes to do.  The time savings comes from the fact that you now have other eyes on your work.  Sometimes the module maintainer will turn around and point out to me a bug in my patch that I hadn&#8217;t yet tested for.  Usually they will eventually commit my patch, which may be a time-savings for me on some future project or when upgrading the current one.  Or they might give me a tip like &#8220;upgrade to my latest version you idiot because it&#8217;s actually way better&#8221; which is valuable to know.  Maybe they will like my code so much that they will offer me marriage or employment, which could be side benefits on my time-saving mission.</p></li>
+</ul>
+  </div>
+
+  </div><div id="comments">
+  <h2>Comments</h2>
+  <a id="comment-8"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://codebaboon.com">Mark</a> (not verified) on February 6, 2008 - 1:07am</h3>
+
+  <div class="content">
+    <p>Hey thanks for the great tips - I like the Firefox &#8220;search for text as you type&#8221; and wildcard bookmarks ones especially!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/8.html">reply</a></li>
+</ul></div>
+<a id="comment-9"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.raincitystudios.com">Boris Mann</a> (not verified) on February 6, 2008 - 2:27am</h3>
+
+  <div class="content">
+    <p>Submit a patch! That tip alone is worth its weight in gold. &#8220;It turns out the only difference between being a frightful Drupal hacker and an esteemed Drupal contributor is whether or not you submitted a patch.&#8221; &#8212; so far that wins for quote of the year!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/9.html">reply</a></li>
+</ul></div>
+<a id="comment-10"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.kinetasystems.com">Web Design by Kineta Systems</a> (not verified) on February 6, 2008 - 5:35am</h3>
+
+  <div class="content">
+    <p>Hey thanks for the article&#8230;</p>
+
+<p>Had a good chuckle about the &#8220;hacking&#8221; bit :)</p>
+
+<p>As an extra in Firefox, you can start searching by hitting forward-slash only, which is a nice intermediate between CTRL-F and &#8220;search as you type&#8221;, the latter of which I personally despise&#8230; :p This is called &#8220;quick search&#8221;, and doesn&#8217;t come with the full set of search controls, but if you&#8217;re just looking for a keyword on the page, you&#8217;re golden.</p>
+
+<p>Hope that helps.</p>
+
+<p>&#8212; Nik</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/10.html">reply</a></li>
+</ul></div>
+<a id="comment-11"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://knaddison.com/user/greggles">greggles</a> (not verified) on February 6, 2008 - 6:17am</h3>
+
+  <div class="content">
+    <p>Great tips!  I&#8217;m a big fan of firefox wildcard bookmarks + keywords but I hadn&#8217;t thought of the &#8220;pr views&#8221; system.  That will save me at least a few minutes each day.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/11.html">reply</a></li>
+</ul></div>
+<a id="comment-12"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>Barry (not verified) on February 6, 2008 - 7:53am</h3>
+
+  <div class="content">
+    <p>I used to think Firebug was the greatest thing to happen to css, and then I found CSSEdit (Mac only).  It is quite simply the single most effective time saver in my arsenal of tools!!</p>
+
+<p>To be clear - I am in no way affiliated with CSSEdit or it&#8217;s writers. I just use it and love it!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/12.html">reply</a></li>
+</ul></div>
+<a id="comment-13"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://ezra-g.com">Ezra</a> (not verified) on February 6, 2008 - 10:05am</h3>
+
+  <div class="content">
+    <p>Another way of running Internet Explorer on OSX without running Windows is <a href="http://www.kronenberg.org/ies4osx/" title="http://www.kronenberg.org/ies4osx/" rel="nofollow">http://www.kronenberg.org/ies4osx/</a> .</p>
+
+<p>Thanks for this article!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/13.html">reply</a></li>
+</ul></div>
+<div class="indented"><a id="comment-14"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>jody on February 6, 2008 - 10:10am</h3>
+
+  <div class="content">
+    <p>Somehow that ies4osx didn&#8217;t work for me when I installed it.  I should try again, thanks.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/14.html">reply</a></li>
+</ul></div>
+</div><a id="comment-17"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://content2zero.com">Shai</a> (not verified) on February 6, 2008 - 5:42pm</h3>
+
+  <div class="content">
+    <p>Way to go Jody. Great ideas. I&#8217;m bookmarkin&#8217; this page!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/17.html">reply</a></li>
+</ul></div>
+<a id="comment-18"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.webwiseone.com">Kevin</a> (not verified) on February 6, 2008 - 5:56pm</h3>
+
+  <div class="content">
+    <p>Fantastic tips Jody!</p>
+
+<p>You&#8217;ve finally convinced me to take the time to set up some Firefox shortcuts.</p>
+
+<p>If they could only help me find my CTR ring ;)</p>
+
+<p>Kevin</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/18.html">reply</a></li>
+</ul></div>
+<a id="comment-20"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.firmidea.com">Scripthead</a> (not verified) on February 7, 2008 - 9:12am</h3>
+
+  <div class="content">
+    <p>Firebug is also very useful for jQuery development. You can quickly locate Xpath on any object that can be later used with jQuery. Do do this open Firebug, click Inspect, select your object, right click on the very tag in the Firebug menu and select Copy Xpath.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/20.html">reply</a></li>
+</ul></div>
+<a id="comment-21"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.canarypromo.com">canaryMason</a> (not verified) on February 7, 2008 - 5:16pm</h3>
+
+  <div class="content">
+    <p>Great tips, Jody! I definitely wasn&#8217;t using FF keywords effectively before. I&#8217;m also rearin&#8217; to submit some patches, if only I could config cvs on this Vista box. Blurg.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/21.html">reply</a></li>
+</ul></div>
+<a id="comment-34"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>theBorg (not verified) on February 19, 2008 - 1:59pm</h3>
+
+  <div class="content">
+    <p>Excellent tips!!</p>
+
+<p>I use vmware fusion to test IE, run great on mac also.</p>
+
+<p>Paco</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/34.html">reply</a></li>
+</ul></div>
+<a id="comment-52"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://macgirvin.com">Mike Macgirvin</a> (not verified) on April 24, 2008 - 4:59pm</h3>
+
+  <div class="content">
+    <p>In addition to Firebug, the &#8216;Clear Cache Button&#8217; toolbar add-on has saved me countless hours of poring over code and wondering why my changes didn&#8217;t work. Answer: They did, but the cache bit me. </p>
+
+<p>Also, if you&#8217;ve got a bug that&#8217;s IE only and are forced to use the wretched thing, it&#8217;s useful to have the Internet Explorer Developer Toolbar - which isn&#8217;t Firebug, but it&#8217;s not bad. There&#8217;s also a commercial product (free for personal use) called DebugBar which looks to be a Firebug clone for IE and provides full JS debugging ability.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/52.html">reply</a></li>
+</ul></div>
+<a id="comment-55"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.isellpagearank.com">pagerank</a> (not verified) on May 3, 2008 - 9:52pm</h3>
+
+  <div class="content">
+    <p>Great tips, thanks a bunch for sharing!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/18/55.html">reply</a></li>
+</ul></div>
+<div class="box">
+
+
+  <div class="content"><form action="http://jodyhamilton.net/comment/reply/18"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Your name: </label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="Anonymous" class="form-text" />
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail: </label>
+ <input type="text" maxlength="64" name="mail" id="edit-mail" size="30" value="" class="form-text" />
+ <div class="description">The content of this field is kept private and will not be shown publicly.</div>
+</div>
+<div class="form-item" id="edit-homepage-wrapper">
+ <label for="edit-homepage">Homepage: </label>
+ <input type="text" maxlength="255" name="homepage" id="edit-homepage" size="30" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comment: <span class="form-required" title="This field is required.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea resizable required"></textarea>
+</div>
+<ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Lines and paragraphs break automatically.</li><li>You may post code using &lt;code&gt;...&lt;/code&gt; (generic) or &lt;?php ... ?&gt; (highlighted PHP) tags.</li><li>You can use <a href="filter/tips.html">Markdown syntax</a> to format and style the text. Also see and <a href="http://michelf.com/projects/php-markdown/extra/">Markdown Extra</a> for tables, footnotes, and more.</li></ul><p><a href="filter/tips.html">More information about formatting options</a></p><input type="hidden" name="form_build_id" id="form-9116d0fcd9ca2f42ebcefa26b67e969c" value="form-9116d0fcd9ca2f42ebcefa26b67e969c"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<input type="submit" name="op" id="edit-submit" value="Save"  class="form-submit" />
+<input type="submit" name="op" id="edit-preview" value="Preview"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+</div>
+          </div>
+          
+      </div></div></div>
+
+        <div id="sidebar-right">
+          <!-- <div class="block block-theme"><form action="/drupal-time-savers"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit-2" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-c4198f5b3df8dcd6fb72f14a89b73830" value="form-c4198f5b3df8dcd6fb72f14a89b73830"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+</div>
+
+</div></form>
+</div> -->
+          <div id="block-tagadelic-1" class="block block-tagadelic">
+
+  <div class="content">
+    <a href="amateur-philosophy.html" class="tagadelic level2">amateur philosophy</a> 
+<a href="business.html" class="tagadelic level1">business</a> 
+<a href="comics.html" class="tagadelic level2">comics</a> 
+<a href="downloads.html" class="tagadelic level4">downloads</a> 
+<a href="drupal.html" class="tagadelic level6">drupal</a> 
+<a href="featured-project.html" class="tagadelic level3">featured project</a> 
+<a href="taxonomy/term/14.html" class="tagadelic level1">firefox</a> 
+<a href="jody-hamiltons.html" class="tagadelic level2">jody hamiltons</a> 
+<a href="jquery.html" class="tagadelic level3">jquery</a> 
+<a href="lullabot.html" class="tagadelic level2">lullabot</a> 
+<a href="music.html" class="tagadelic level6">music</a> 
+<a href="ravings.html" class="tagadelic level1">ravings</a> 
+<a href="rifle-nice.html" class="tagadelic level4">rifle nice</a> 
+<a href="theming.html" class="tagadelic level2">theming</a> 
+<a href="zivtech.html" class="tagadelic level1">zivtech</a> 
+<div class='more-link'><a href="tagadelic/chunk/1.html">more tags</a></div>  </div>
+</div>
+<div id="block-search-0" class="block block-search">
+
+  <div class="content">
+    <form action="drupal-time-savers.html"  accept-charset="UTF-8" method="post" id="search-block-form">
+<div><div class="container-inline">
+  <div class="form-item" id="edit-search-block-form-1-wrapper">
+ <label for="edit-search-block-form-1">Search this site: </label>
+ <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="10" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit-1" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-6f431127131966345936ed09c0815c58" value="form-6f431127131966345936ed09c0815c58"  />
+<input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"  />
+</div>
+
+</div></form>
+  </div>
+</div>
+<div id="block-aggregator-feed-3" class="block block-aggregator">
+  <h2>My Work Blog</h2>
+
+  <div class="content">
+    <div class="item-list"><ul><li class="first"><a href="http://www.zivtech.com/blog/zivtech-welcomes-new-creative-director">Zivtech welcomes new Creative Director</a>
+</li>
+<li class="last"><a href="http://www.zivtech.com/blog/use-cck-link-and-filefields-redirects-legacy-content">Use CCK link and filefields as redirects to legacy content</a>
+</li>
+</ul></div><div class="more-link"><a href="aggregator/sources/3.html" title="View this feed&#039;s recent news.">more</a></div>  </div>
+</div>
+        </div>
+       	        <div id="footer"><div id="block-block-2" class="block block-block">
+
+  <div class="content">
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a><a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></p>
+  </div>
+</div>
+<div id="block-system-0" class="block block-system">
+
+  <div class="content">
+    <a href="http://drupal.org"><img src="misc/powered-blue-80x15.png" alt="Powered by Drupal, an open source content management system" title="Powered by Drupal, an open source content management system" width="80" height="15" /></a>  </div>
+</div>
+</div>
+  </div>
+<!-- /layout -->
+
+  <script type="text/javascript">document.write(unescape("%3Cscript src='http://www.google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">var pageTracker = _gat._getTracker("UA-3465262-1");pageTracker._initData();pageTracker._trackPageview();</script>
+<script type="text/javascript" src="sites/jodyhamilton.net/files/js/cb369c0dce16d082bbd4d3ccca5dc1fb.js"></script>
+  </body>
+</html>

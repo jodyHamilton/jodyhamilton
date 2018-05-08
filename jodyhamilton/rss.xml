@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://jodyhamilton.net"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Jody Hamilton</title>
+ <link>http://jodyhamilton.net</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Driving and Remembering Driving</title>
+ <link>http://jodyhamilton.net/driving-and-remembering-driving</link>
+ <description>&lt;p&gt;I got a request for a copy of Driving and Remembering Driving, a four-track recorded album I made pre-Rifle Nice.&lt;/p&gt;
+
+&lt;p&gt;Here you go, full album as mp3&amp;#8217;s: &lt;a href=&quot;http://jodyhamilton.net/files/driving.zip&quot; rel=&quot;nofollow&quot;&gt;driving.zip&lt;/a&gt;.&lt;/p&gt;
+</description>
+ <comments>http://jodyhamilton.net/driving-and-remembering-driving#comments</comments>
+ <category domain="http://jodyhamilton.net/downloads">downloads</category>
+ <category domain="http://jodyhamilton.net/music">music</category>
+ <pubDate>Mon, 23 Nov 2009 17:15:49 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">34 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Rifle Nice (the album)</title>
+ <link>http://jodyhamilton.net/rifle-nice-album</link>
+ <description>&lt;p&gt;Rifle Nice released our self-titled full-length in November 2006 and disbanded soon after, leaving our labor of love fully formed and entirely unpromoted.  &lt;/p&gt;
+
+&lt;p&gt;I am proud of the years of work that went into this album.  It was recorded, mixed and mastered by &lt;a href=&quot;http://moriartyrecording.com&quot; rel=&quot;nofollow&quot;&gt;Bill Moriarty&lt;/a&gt; (whose site I recently built in Drupal).  Playing on it are ex-Rifle Nicers &lt;a href=&quot;http://kingkongdingdong.net/&quot; rel=&quot;nofollow&quot;&gt;Steve Heise&lt;/a&gt;, &lt;a href=&quot;http://dragoncitymusic.com/&quot; rel=&quot;nofollow&quot;&gt;Jim Lewis&lt;/a&gt;, &lt;a href=&quot;http://www.myspace.com/atmj&quot; rel=&quot;nofollow&quot;&gt;Alicia Lewcarth&lt;/a&gt;, &lt;a href=&quot;http://www.myspace.com/mitchfiction&quot; rel=&quot;nofollow&quot;&gt;Rory Connell&lt;/a&gt;, &lt;a href=&quot;http://asunnydayinglasgow.com/&quot; rel=&quot;nofollow&quot;&gt;Ben Daniels&lt;/a&gt; and myself.&lt;/p&gt;
+
+&lt;p&gt;I have plenty of beautifully-designed CDs remaining and am happy to mail you one if you &lt;a href=&quot;/contact&quot; rel=&quot;nofollow&quot;&gt;contact&lt;/a&gt; me and include your address.  But for the first time I am now releasing the full album as a free download.  Please download and enjoy.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/rifle-nice-album&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/rifle-nice-album#comments</comments>
+ <category domain="http://jodyhamilton.net/downloads">downloads</category>
+ <category domain="http://jodyhamilton.net/music">music</category>
+ <category domain="http://jodyhamilton.net/rifle-nice">rifle nice</category>
+ <enclosure url="http://jodyhamilton.net/sites/jodyhamilton.net/files/Rifle Nice.zip" length="55288379" type="application/zip" />
+ <pubDate>Sun, 13 Apr 2008 14:49:32 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">33 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>New Business: Zivtech</title>
+ <link>http://jodyhamilton.net/new-business-zivtech</link>
+ <description>&lt;p&gt;I came to web development in June 2006 as an intern at &lt;a href=&quot;http://canarypromo.com&quot;&gt;Canary Promo+Design&lt;/a&gt;.  That December I worked on &lt;a href=&quot;http://phillyjcc.com&quot; rel=&quot;nofollow&quot;&gt;our first Drupal site&lt;/a&gt; and never looked back.&lt;/p&gt;
+
+&lt;p&gt;Since then I have been working on Drupal fulltime as a freelancer, both building sites and consulting.  Needless to say in the past two years my skills have grown considerably, thanks to the amazing power of passionate self-education and in large part to the extraordinary cumulative efforts of the Drupal developers and other web folk who post helpful tips to the internet.  &lt;/p&gt;
+
+&lt;p&gt;As a bit of a freedom-freak, I have enjoyed freelancing very much.  While working in the corporate world made me depressed and lazy, working freelance pushed me to my mental limit on a continuous basis.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/new-business-zivtech&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <category domain="http://jodyhamilton.net/business">business</category>
+ <category domain="http://jodyhamilton.net/zivtech">zivtech</category>
+ <pubDate>Wed, 09 Apr 2008 10:43:51 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">32 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Theming Sidebars and Panels</title>
+ <link>http://jodyhamilton.net/theming-sidebars-and-panels</link>
+ <description>&lt;p&gt;Here&amp;#8217;s a pretty basic css technique I&amp;#8217;ve noticed myself using a lot of lately (not at all my own invention).  The divs used as examples come from zen theme.&lt;/p&gt;
+
+&lt;p&gt;Often a design calls for putting a background (or border) on a sidebar.  It should look as so:&lt;br /&gt;
+&lt;img src=&quot;/sites/jodyhamilton.net/files/goal.jpg&quot; alt=&quot;goal&quot; /&gt;&lt;br /&gt;
+If you haven&amp;#8217;t been down this route before, you will probably try something like&lt;br /&gt;
+&lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;#sidebar-right{&lt;br /&gt;&amp;nbsp; background: #123456;&lt;br /&gt;}&lt;/code&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/theming-sidebars-and-panels&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/theming-sidebars-and-panels#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/theming">theming</category>
+ <pubDate>Wed, 12 Mar 2008 12:30:09 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">31 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Song: A Thought</title>
+ <link>http://jodyhamilton.net/song-thought</link>
+ <description>&lt;p&gt;&lt;script language=&quot;JavaScript&quot; src=&quot;http://jodyhamilton.net/files/audio/audio-player.js&quot;&gt;&lt;/script&gt;&lt;object type=&quot;application/x-shockwave-flash&quot; data=&quot;http://jodyhamilton.net/files/audio/player.swf&quot; id=&quot;audioplayer1&quot; height=&quot;24&quot; width=&quot;290&quot;&gt;
+&lt;param name=&quot;movie&quot; value=&quot;http://jodyhamilton.net/files/audio/player.swf&quot; /&gt;
+&lt;param name=&quot;FlashVars&quot; value=&quot;playerID=1&amp;amp;soundFile=http://jodyhamilton.net/sites/jodyhamilton.net/files/a-thought.mp3&quot; /&gt;
+&lt;param name=&quot;quality&quot; value=&quot;high&quot; /&gt;
+&lt;param name=&quot;menu&quot; value=&quot;false&quot; /&gt;
+&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;
+&lt;/object&gt;&lt;/p&gt;
+
+&lt;p&gt;
+See also: &lt;a href=&quot;http://jodyhamilton.net/unreleased-songs&quot;&gt;Unreleased Songs&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8216;A Thought&amp;#8217; is my current favorite of all my songs.  I know I have one friend who agrees, so I&amp;#8217;ll share the full lyrics.&lt;/p&gt;
+
+&lt;p&gt;A year&amp;#8217;s residual thoughts are filling my living room.&lt;br /&gt;
+The shape they take describes my future,&lt;br /&gt;
+and my mind wanders around the first floor of its house,&lt;br /&gt;
+as my fixations take form and float about.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/song-thought&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <category domain="http://jodyhamilton.net/music">music</category>
+ <pubDate>Thu, 21 Feb 2008 19:37:40 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">30 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Node theming by field: deconstructing $node-&gt;content in Drupal 5</title>
+ <link>http://jodyhamilton.net/node-theming-field-deconstructing-node-content-drupal-5</link>
+ <description>&lt;p&gt;The CCK &amp;#8216;display fields&amp;#8217; settings are very useful for theming nodes by content type, but I often find myself having to get further into customizing node output field by field.&lt;/p&gt;
+
+&lt;p&gt;Once I decide there&amp;#8217;s no way getting around taking finer control of my node&amp;#8217;s fields, I create a node-{type}.tpl.php by copying my existing node.tpl.php and open up Devel&amp;#8217;s &amp;#8216;Node Render&amp;#8217; tab.  Then I delete the $content variable from the template and start adding things like &lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;&lt;span style=&quot;color: #000000&quot;&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;&amp;lt;?php&lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;print &lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;$node&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;content&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;field_image&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;][&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;#value&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;]; &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/div&gt; and &lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;&lt;span style=&quot;color: #000000&quot;&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;&amp;lt;?php&lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;print &lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;$node&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;content&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;body&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;][&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;#value&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;]; &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/div&gt; The $content variable is nice for amateurs, but we need the unrendered $node-&amp;gt;content to get good control of a node.&lt;/p&gt;
+
+&lt;p&gt;While this gives me complete control over the output of the node&amp;#8217;s fields, the drawback is that now if I add a new field to the node, or if I add a module that adds something to $node-&amp;gt;content, I have to go back to my template and add in this new element.  Because I often do my theming and development in parallel, this can be rather annoying, and there is also a danger that I could overlook doing it.&lt;/p&gt;
+
+&lt;p&gt;Therefore I think it may be more practical to use code like this in the node template:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/node-theming-field-deconstructing-node-content-drupal-5&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/node-theming-field-deconstructing-node-content-drupal-5#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/theming">theming</category>
+ <pubDate>Mon, 11 Feb 2008 23:53:52 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">28 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Song: Move Closer to what Deaner was Talking About</title>
+ <link>http://jodyhamilton.net/song-move-closer-what-deaner-was-talking-about</link>
+ <description>&lt;p&gt;&lt;script language=&quot;JavaScript&quot; src=&quot;http://jodyhamilton.net/files/audio/audio-player.js&quot;&gt;&lt;/script&gt;&lt;object type=&quot;application/x-shockwave-flash&quot; data=&quot;http://jodyhamilton.net/files/audio/player.swf&quot; id=&quot;audioplayer1&quot; height=&quot;24&quot; width=&quot;290&quot;&gt;
+&lt;param name=&quot;movie&quot; value=&quot;http://jodyhamilton.net/files/audio/player.swf&quot; /&gt;
+&lt;param name=&quot;FlashVars&quot; value=&quot;playerID=1&amp;amp;soundFile=http://jodyhamilton.net/sites/jodyhamilton.net/files/Move-Closer-to-What-deaner-was-talking-about.mp3&quot; /&gt;
+&lt;param name=&quot;quality&quot; value=&quot;high&quot; /&gt;
+&lt;param name=&quot;menu&quot; value=&quot;false&quot; /&gt;
+&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;
+&lt;/object&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;Move Closer to What Deaner was Talking About&amp;#8221; is Rifle Nice&amp;#8217;s &amp;#8216;mashup&amp;#8217; of the Philadelphia WPVI &amp;#8220;Action News&amp;#8221; theme and Ween&amp;#8217;s &amp;#8220;What Deaner Was Talkin&amp;#8217; About&amp;#8221; which was created for the &lt;a href=&quot;http://www.plainparade.org/songs/&quot;&gt;Plain Parade compilation&lt;/a&gt; of Philly bands covering other Philly bands. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/song-move-closer-what-deaner-was-talking-about&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/song-move-closer-what-deaner-was-talking-about#comments</comments>
+ <category domain="http://jodyhamilton.net/music">music</category>
+ <category domain="http://jodyhamilton.net/rifle-nice">rifle nice</category>
+ <enclosure url="http://jodyhamilton.net/sites/jodyhamilton.net/files/Move-Closer-to-What-deaner-was-talking-about_0.mp3" length="3403241" type="audio/x-mpeg" />
+ <pubDate>Sat, 09 Feb 2008 17:28:21 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">21 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Song: Nervous Guy</title>
+ <link>http://jodyhamilton.net/song-nervous-guy</link>
+ <description>&lt;p&gt;Well, I&amp;#8217;m bringing this &amp;#8216;classic&amp;#8217; &amp;#8216;music video&amp;#8217; back to the spotlight now that I have a new site.&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;Nervous Guy&amp;#8221; is an old song of mine which is based on a time in my life just after college when I spent a lot of time by myself in a cemetery almost every day.  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/song-nervous-guy&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/song-nervous-guy#comments</comments>
+ <category domain="http://jodyhamilton.net/amateur-philosophy">amateur philosophy</category>
+ <category domain="http://jodyhamilton.net/comics">comics</category>
+ <category domain="http://jodyhamilton.net/music">music</category>
+ <category domain="http://jodyhamilton.net/rifle-nice">rifle nice</category>
+ <pubDate>Thu, 07 Feb 2008 19:30:01 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">20 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Module: MyAccount_alter</title>
+ <link>http://jodyhamilton.net/module-myaccountalter</link>
+ <description>&lt;p&gt;I often find myself needing to get rid of some of the sections on Drupal&amp;#8217;s &amp;#8216;My Account&amp;#8217; page.  Not every site needs it to say &amp;#8216;History: Member for 1 day&amp;#8217; for example, and if you use a lot of contributed modules that screen can get cluttered fast.  So this morning I got sick of dealing with it, found there is a perfectly good hook_profile_alter there to work with, and wrote a little module to let administrators disable these fields.  Let me know how you like it: &lt;a href=&quot;http://drupal.org/project/myaccount_alter&quot; title=&quot;http://drupal.org/project/myaccount_alter&quot; rel=&quot;nofollow&quot;&gt;http://drupal.org/project/myaccount_alter&lt;/a&gt; (currently Drupal 5 only)&lt;/p&gt;
+</description>
+ <comments>http://jodyhamilton.net/module-myaccountalter#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/featured-project">featured project</category>
+ <pubDate>Wed, 06 Feb 2008 12:19:08 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">19 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Drupal Time-savers</title>
+ <link>http://jodyhamilton.net/drupal-time-savers</link>
+ <description>&lt;p&gt;If you work freelance like I do, you know that time is money.  I&amp;#8217;m always trying to shave a few more seconds off my development time.  Here are a few tips and tricks that I constantly use:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/drupal-time-savers&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/drupal-time-savers#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/taxonomy/term/14">firefox</category>
+ <pubDate>Tue, 05 Feb 2008 19:35:07 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">18 at http://jodyhamilton.net</guid>
+</item>
+</channel>
+</rss>

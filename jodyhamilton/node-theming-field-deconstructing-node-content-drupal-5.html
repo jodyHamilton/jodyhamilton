@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Node theming by field: deconstructing $node-&gt;content in Drupal 5 | Jody Hamilton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="sites/default/files/jodyhamilton_favicon.jpg" type="image/x-icon" />
+	<meta name = "description" content = "Jody Hamilton: drupal web development, songs, and various ravings" />
+    <link type="text/css" rel="stylesheet" media="all" href="sites/jodyhamilton.net/modules/codefilter/codefilter.css%3Fu.css" />
+<link type="text/css" rel="stylesheet" media="all" href="sites/jodyhamilton.net/files/css/e4c1a4c0a5e64291d3a82762a68e2614.css" />
+    <script type="text/javascript" src="sites/jodyhamilton.net/files/js/7e1313c45d01b7f39dcdabcb1607c862.js"></script>
+<script type="text/javascript">jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackDownload": "pdf|zip|mp3", "LegacyVersion": 0 }, "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/jodyhamilton.net/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "display_image_size": "", "overlay_opacity": "0.6", "use_alt_layout": false, "disable_zoom": false, "force_show_nav": false, "image_node_sizes": "(\\.thumbnail)", "trigger_image_classes": "img.inline,img.flickr-photo-img,img.flickr-photoset-img,img.image-img_assist_custom,img.thumbnail, img.image-thumbnail", "group_images": true, "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "node_link_text": "View Image Details", "node_link_target": false, "image_count": "Image !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return false;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close" } });</script>
+    <!--[if lt IE 7]>
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/jodyhamilton/fix-ie.css" />    <![endif]-->
+  </head>
+  <body>
+
+<!-- Layout -->
+
+    <div id="wrapper">
+     <div id="header">
+        <h1><a href="index.html" title="Jody Hamilton"><span>Jody Hamilton</span></a></h1>      </div> <!-- /header -->
+
+      <div id ="menu">
+		        <ul class="links primary-links"><li class="menu-172 first"><a href="about.html" title="About">About</a></li>
+
+<li class="menu-215 last"><a href="featured-project.html" title="">Projects</a></li>
+</ul>                                </div>
+
+      <div id="main"><div id="main-top"><div id="main-bottom">
+          <div class="breadcrumb"><a href="index.html">Home</a></div>                              <h2>Node theming by field: deconstructing $node-&gt;content in Drupal 5</h2>                                                  <div class="clear-block">
+            <div id="node-28" class="node clear-block">
+
+
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on February 11, 2008 - 11:53pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first"><a href="drupal.html" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_17 last"><a href="theming.html" rel="tag" title="">theming</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>The CCK &#8216;display fields&#8217; settings are very useful for theming nodes by content type, but I often find myself having to get further into customizing node output field by field.</p>
+
+<p>Once I decide there&#8217;s no way getting around taking finer control of my node&#8217;s fields, I create a node-{type}.tpl.php by copying my existing node.tpl.php and open up Devel&#8217;s &#8216;Node Render&#8217; tab.  Then I delete the $content variable from the template and start adding things like <div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /> </span><span style="color: #007700">print </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_image'</span><span style="color: #007700">][</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]; <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div> and <div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /> </span><span style="color: #007700">print </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'body'</span><span style="color: #007700">][</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]; <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div> The $content variable is nice for amateurs, but we need the unrendered $node-&gt;content to get good control of a node.</p>
+
+<p>While this gives me complete control over the output of the node&#8217;s fields, the drawback is that now if I add a new field to the node, or if I add a module that adds something to $node-&gt;content, I have to go back to my template and add in this new element.  Because I often do my theming and development in parallel, this can be rather annoying, and there is also a danger that I could overlook doing it.</p>
+
+<p>Therefore I think it may be more practical to use code like this in the node template:</p>
+
+<p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">foreach(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content </span><span style="color: #007700">as </span><span style="color: #0000BB">$key </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$field</span><span style="color: #007700">) {<br />&nbsp;&nbsp;&nbsp; print </span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp; <br />&nbsp; }&nbsp; <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+Instead of printing each field that is wanted in the template, I can instead unset the fields that are not wanted and then print all the fields.  This is faster to write and it lets any new fields show up.  After unsetting unwanted fields it looks like this:<br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_dumb_field'</span><span style="color: #007700">]);<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_annoying'</span><span style="color: #007700">]);<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'#children'</span><span style="color: #007700">]);<br /><br />foreach(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content </span><span style="color: #007700">as </span><span style="color: #0000BB">$key </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$field</span><span style="color: #007700">) {<br />&nbsp;&nbsp;&nbsp; print </span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp; <br />&nbsp; }&nbsp; <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+(I found that I need to unset $node-&gt;content[&#8216;#children&#8217;] to get this method to work correctly.)</p>
+
+<p>Now if you want to control the output of specific fields individually you could add a switch:<br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_dumb_field'</span><span style="color: #007700">]);<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_annoying'</span><span style="color: #007700">]);<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'#children'</span><span style="color: #007700">]);<br /><br />foreach(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content </span><span style="color: #007700">as </span><span style="color: #0000BB">$key </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$field</span><span style="color: #007700">) {<br />&nbsp; switch (</span><span style="color: #0000BB">$key</span><span style="color: #007700">) {<br />&nbsp;&nbsp;&nbsp; case </span><span style="color: #DD0000">'body'</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print </span><span style="color: #DD0000">'&lt;div class="hot-body"&gt;'</span><span style="color: #007700">. </span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">] .</span><span style="color: #DD0000">'&lt;/div&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br />&nbsp;&nbsp;&nbsp; case </span><span style="color: #DD0000">'field_awesome'</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print </span><span style="color: #DD0000">'&lt;div class="special-markup"&gt;'</span><span style="color: #007700">. </span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">] .</span><span style="color: #DD0000">'&lt;/div&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br />&nbsp;&nbsp;&nbsp; default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print </span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br />&nbsp; }&nbsp;&nbsp;&nbsp; <br />}&nbsp; <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+Now I know that these template files are not supposed to get all mucked up with php, so this method is really just a hack and won&#8217;t be appreciated if you are working with a designer who dislikes php.  But if you, like me, were finding yourself dissecting $node-&gt;content into crazy pieces with tons of php in your node templates already, perhaps this method could be a slight improvement.</p>
+  </div>
+
+  </div><div id="comments">
+  <h2>Comments</h2>
+  <a id="comment-24"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://sirkitree.net">sirkitree</a> (not verified) on February 12, 2008 - 3:40am</h3>
+
+  <div class="content">
+    <p>Yes it is better to get this done in template.php and then have your .tpl file clean for a designer, but <strong>this is a key step that should be learned on the way there. After that, if you find your template.php file getting overcrowded, you can split out your $vars into <a href="http://sirkitree.net/separating-phptemplate-variables" rel="nofollow">node-[content-type].vars.php</a>.</strong></p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/24.html">reply</a></li>
+</ul></div>
+<div class="indented"><a id="comment-30"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>jody on February 12, 2008 - 10:09am</h3>
+
+  <div class="content">
+    <p>I wonder if we could combine these two methods.  In _phptemplate_variables maybe we could assign all the fields we want as $vars and also assign a variable to represent all the fields we neither assigned nor unset, like a catch-all.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/30.html">reply</a></li>
+</ul></div>
+</div><a id="comment-25"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://perlucida.com">adrinux</a> (not verified) on February 12, 2008 - 6:25am</h3>
+
+  <div class="content">
+    <p>Fantastic write up! I think I&#8217;ll be using this.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/25.html">reply</a></li>
+</ul></div>
+<a id="comment-26"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://drupal.org/moshe">moshe weitzman</a> (not verified) on February 12, 2008 - 8:14am</h3>
+
+  <div class="content">
+    <p>very nice writeup. <a href="http://drupal.org/node/134478" rel="nofollow">we want to improve this experience for themers in D7</a>. they will have to use a few simple php functions but the temptation to override $content will be much smaller. we will introduce render() and hide() so you can put pieces of $content where you want without wrecking future enhancements. your writeup is current state of the art though - thanks for sharing.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/26.html">reply</a></li>
+</ul></div>
+<div class="indented"><a id="comment-29"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>jody on February 12, 2008 - 10:00am</h3>
+
+  <div class="content">
+    <p>Eaton&#8217;s goals in that thread seem to be exactly right - I&#8217;m really glad to see people are working hard on this issue.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/29.html">reply</a></li>
+</ul></div>
+</div><a id="comment-27"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.athenryac.com">Alan Burke</a> (not verified) on February 12, 2008 - 8:45am</h3>
+
+  <div class="content">
+    <p>There&#8217;s a better way<br />
+See the theme folder of the CCK module<br />
+There&#8217;s a readme txt file which explains how to have individual template files for each CCK field.</p>
+
+<p>Regards<br />
+Alan</p>
+
+<p>I Thought I had added it to Drupal.org&#8230;but I can&#8217;t find it now</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/27.html">reply</a></li>
+</ul></div>
+<div class="indented"><a id="comment-28"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>jody on February 12, 2008 - 9:36am</h3>
+
+  <div class="content">
+    <p>Hi Alan, </p>
+
+<p>I checked out that CCK theme README and yes it does explain how to make template files for individual fields.  I think that most of the time that won&#8217;t be helpful to me.  A good example of what I&#8217;m most often trying to do with my fields is to just stick a few of them in the same div in the node template.  I think a better example of what I&#8217;m doing may be:</p>
+
+<p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_dumb_field'</span><span style="color: #007700">]);<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_annoying'</span><span style="color: #007700">]);<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'#children'</span><span style="color: #007700">]); <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div></p>
+
+<p><code>&lt;div class =&quot;details&quot;&gt;</code><br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">print </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_a'</span><span style="color: #007700">];<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_a'</span><span style="color: #007700">]);<br />print </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_b'</span><span style="color: #007700">];<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_b'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+<div class="codeblock"><code>&lt;/div&gt;<br /><br />&lt;/div class =&quot;evertything-else&quot;&gt;</code></div><br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">foreach(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content </span><span style="color: #007700">as </span><span style="color: #0000BB">$key </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$field</span><span style="color: #007700">) {<br />&nbsp;&nbsp;&nbsp; print </span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">];&nbsp;&nbsp; <br />&nbsp; } <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+<code>&lt;/div&gt;</code></p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/28.html">reply</a></li>
+</ul></div>
+</div><a id="comment-31"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>Jacine (not verified) on February 12, 2008 - 8:33pm</h3>
+
+  <div class="content">
+    <p>Hi Jodi! </p>
+
+<p>This is great. Thank you for posting.</p>
+
+<p>I have a quick question.  How would you do this for CCK fields that are inside a fieldgroup?</p>
+
+<p>Thanks again :)</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/31.html">reply</a></li>
+</ul></div>
+<a id="comment-32"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>jody on February 13, 2008 - 8:44pm</h3>
+
+  <div class="content">
+    <p>That&#8217;s a good question- using fieldgroups makes this even more complex.  Here&#8217;s an idea showing some fields from a fieldgroup being explicitly displayed, and then anything else in the fieldgroup gets printed last.</p>
+
+<p><div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'#children'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div></p>
+
+<p><code>&lt;div class =&quot;details&quot;&gt;</code><br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">// A regular field<br /></span><span style="color: #007700">print </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_a'</span><span style="color: #007700">];<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_a'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+<code>&lt;/div&gt;</code></p>
+
+<p><code>&lt;div class =&quot;group-special&quot;&gt;</code><br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//All fields within a certain fieldgroup<br /></span><span style="color: #007700">foreach(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'group_special'</span><span style="color: #007700">] as </span><span style="color: #0000BB">$key </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$groupfield</span><span style="color: #007700">) {<br />&nbsp; if (</span><span style="color: #0000BB">$groupfield</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]) { <br />&nbsp;&nbsp;&nbsp; print </span><span style="color: #0000BB">$groupfield</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">];<br />&nbsp; }<br />}<br />unset(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'group_special'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+<code>&lt;/div&gt;</code></p>
+
+<p><code>&lt;/div class =&quot;everything-else&quot;&gt;</code><br />
+<div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//All other fields including those in other fieldgroups<br /></span><span style="color: #007700">foreach(</span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content </span><span style="color: #007700">as </span><span style="color: #0000BB">$key </span><span style="color: #007700">=&gt; </span><span style="color: #0000BB">$field</span><span style="color: #007700">) {<br />&nbsp;&nbsp;&nbsp; if (</span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]) { print </span><span style="color: #0000BB">$field</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]; }<br />&nbsp;&nbsp;&nbsp; else {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach(</span><span style="color: #0000BB">$field </span><span style="color: #007700">as </span><span style="color: #0000BB">$groupfield</span><span style="color: #007700">) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (</span><span style="color: #0000BB">$groupfield</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]) { print </span><span style="color: #0000BB">$groupfield</span><span style="color: #007700">[</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; } <br />&nbsp; }<br /></span><span style="color: #0000BB">?&gt;</span></span></code></div><br />
+<code>&lt;/div&gt;</code></p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/32.html">reply</a></li>
+</ul></div>
+<a id="comment-33"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>Jacine (not verified) on February 15, 2008 - 8:56pm</h3>
+
+  <div class="content">
+    <p>Thank you Jody! I was struggling with the fieldsets for quite a while. This is perfect :)</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/33.html">reply</a></li>
+</ul></div>
+<a id="comment-35"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>John (not verified) on March 3, 2008 - 12:45am</h3>
+
+  <div class="content">
+    <p>Thank you for this info. I have used it in a site and it has been helpful. I ran into an issue that unfortunately limits its usefulness however, in that the node content bit that I have pulled into a block is not rendering PHP. I have PHP enabled as the input format on both the node and the block. The PHP [a call to base_path()] shows in the source but is not processed as PHP. Has anyone experienced this and found a solution?</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/35.html">reply</a></li>
+</ul></div>
+<div class="indented"><a id="comment-37"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>John (not verified) on March 12, 2008 - 1:38pm</h3>
+
+  <div class="content">
+    <p>I think i was trying to do too much with this. While i never did really find an answer to my issue, i did resolve the situation by using &#8220;CCK Blocks&#8221; to get my additional fields into blocks that would evaluate PHP.</p>
+
+<p>So your technique was helpful in that i could add fields to a node but keep some of them from displaying, for example in a typical content-in-center-column layout. Then through CCK Blocks i could use those fields elsewhere on the page (left column in my case).</p>
+
+<p>Thanks again for taking the time to post this helpful technique.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/37.html">reply</a></li>
+</ul></div>
+</div><a id="comment-38"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>jody on March 12, 2008 - 1:46pm</h3>
+
+  <div class="content">
+    <p>I would be concerned if PHP was not evaluating in my blocks.  I hope that you did the obvious and enclosed it in php tags.  I have never heard of this issue.</p>
+
+<p>As regards simply not showing certain of your cck fields, you can take care of this by visiting the &#8216;display settings&#8217; tab of your content type&#8217;s administration.  The technique posted here is intended for more advanced theming needs.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/38.html">reply</a></li>
+</ul></div>
+<a id="comment-47"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.trekking-world.com">Martijn</a> (not verified) on March 19, 2008 - 8:48am</h3>
+
+  <div class="content">
+    <p>Hi Jody,</p>
+
+<p>Excellent writeup. This helps a lot with Drupal theming!<br />
+You yourself have a great theme also!</p>
+
+<p>greetings,<br />
+Martijn</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/47.html">reply</a></li>
+</ul></div>
+<a id="comment-49"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>Chacha (not verified) on March 25, 2008 - 4:39pm</h3>
+
+  <div class="content">
+    <p>Hey!! So good to find your website. This write up is great. I am now going to try unset on my dumb annoying fields right now!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/49.html">reply</a></li>
+</ul></div>
+<div class="indented"><a id="comment-162"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3>Anonymous (not verified) on June 17, 2009 - 7:41am</h3>
+
+  <div class="content">
+    <p>Hey!! So good to find your website. This write up is great. I am now going to try unset on my dumb annoying fields right now!  <a href="http://www.hobifobi.com" rel="nofollow">fobi</a></p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/162.html">reply</a></li>
+</ul></div>
+</div><a id="comment-64"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.humanhandbook.org">Marcus</a> (not verified) on May 30, 2008 - 6:57pm</h3>
+
+  <div class="content">
+    <p>Jody,</p>
+
+<p>Thanks for posting these node theming tips.  The example code you set forth has been immensely helpful.</p>
+
+<p><strong>Much appreciated,</strong><br />
+Marcus</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/64.html">reply</a></li>
+</ul></div>
+<a id="comment-65"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="http://www.humanhandbook.org">Marcus</a> (not verified) on May 30, 2008 - 6:58pm</h3>
+
+  <div class="content">
+    <p>Hi, Jody,</p>
+
+<p>Thanks for posting these excellent tips on how to theme nodes.</p>
+
+<p>Much appreciated,<br />
+Marcus</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="comment/reply/28/65.html">reply</a></li>
+</ul></div>
+<div class="box">
+
+
+  <div class="content"><form action="http://jodyhamilton.net/comment/reply/28"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Your name: </label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="Anonymous" class="form-text" />
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail: </label>
+ <input type="text" maxlength="64" name="mail" id="edit-mail" size="30" value="" class="form-text" />
+ <div class="description">The content of this field is kept private and will not be shown publicly.</div>
+</div>
+<div class="form-item" id="edit-homepage-wrapper">
+ <label for="edit-homepage">Homepage: </label>
+ <input type="text" maxlength="255" name="homepage" id="edit-homepage" size="30" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comment: <span class="form-required" title="This field is required.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea resizable required"></textarea>
+</div>
+<ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Lines and paragraphs break automatically.</li><li>You may post code using &lt;code&gt;...&lt;/code&gt; (generic) or &lt;?php ... ?&gt; (highlighted PHP) tags.</li><li>You can use <a href="filter/tips.html">Markdown syntax</a> to format and style the text. Also see and <a href="http://michelf.com/projects/php-markdown/extra/">Markdown Extra</a> for tables, footnotes, and more.</li></ul><p><a href="filter/tips.html">More information about formatting options</a></p><input type="hidden" name="form_build_id" id="form-f7bb9d0a4f9c90fa927c0d598d6a5410" value="form-f7bb9d0a4f9c90fa927c0d598d6a5410"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<input type="submit" name="op" id="edit-submit" value="Save"  class="form-submit" />
+<input type="submit" name="op" id="edit-preview" value="Preview"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+</div>
+          </div>
+          
+      </div></div></div>
+
+        <div id="sidebar-right">
+          <!-- <div class="block block-theme"><form action="/node-theming-field-deconstructing-node-content-drupal-5"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit-2" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-ac62b1cade7b9de67e004fc8104619a8" value="form-ac62b1cade7b9de67e004fc8104619a8"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+</div>
+
+</div></form>
+</div> -->
+          <div id="block-tagadelic-1" class="block block-tagadelic">
+
+  <div class="content">
+    <a href="amateur-philosophy.html" class="tagadelic level2">amateur philosophy</a> 
+<a href="business.html" class="tagadelic level1">business</a> 
+<a href="comics.html" class="tagadelic level2">comics</a> 
+<a href="downloads.html" class="tagadelic level4">downloads</a> 
+<a href="drupal.html" class="tagadelic level6">drupal</a> 
+<a href="featured-project.html" class="tagadelic level3">featured project</a> 
+<a href="taxonomy/term/14.html" class="tagadelic level1">firefox</a> 
+<a href="jody-hamiltons.html" class="tagadelic level2">jody hamiltons</a> 
+<a href="jquery.html" class="tagadelic level3">jquery</a> 
+<a href="lullabot.html" class="tagadelic level2">lullabot</a> 
+<a href="music.html" class="tagadelic level6">music</a> 
+<a href="ravings.html" class="tagadelic level1">ravings</a> 
+<a href="rifle-nice.html" class="tagadelic level4">rifle nice</a> 
+<a href="theming.html" class="tagadelic level2">theming</a> 
+<a href="zivtech.html" class="tagadelic level1">zivtech</a> 
+<div class='more-link'><a href="tagadelic/chunk/1.html">more tags</a></div>  </div>
+</div>
+<div id="block-search-0" class="block block-search">
+
+  <div class="content">
+    <form action="node-theming-field-deconstructing-node-content-drupal-5.html"  accept-charset="UTF-8" method="post" id="search-block-form">
+<div><div class="container-inline">
+  <div class="form-item" id="edit-search-block-form-1-wrapper">
+ <label for="edit-search-block-form-1">Search this site: </label>
+ <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="10" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit-1" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-c187301f395acc71f6eeaf5580270bb0" value="form-c187301f395acc71f6eeaf5580270bb0"  />
+<input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"  />
+</div>
+
+</div></form>
+  </div>
+</div>
+<div id="block-aggregator-feed-3" class="block block-aggregator">
+  <h2>My Work Blog</h2>
+
+  <div class="content">
+    <div class="item-list"><ul><li class="first"><a href="http://www.zivtech.com/blog/zivtech-welcomes-new-creative-director">Zivtech welcomes new Creative Director</a>
+</li>
+<li class="last"><a href="http://www.zivtech.com/blog/use-cck-link-and-filefields-redirects-legacy-content">Use CCK link and filefields as redirects to legacy content</a>
+</li>
+</ul></div><div class="more-link"><a href="aggregator/sources/3.html" title="View this feed&#039;s recent news.">more</a></div>  </div>
+</div>
+        </div>
+       	        <div id="footer"><div id="block-block-2" class="block block-block">
+
+  <div class="content">
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a><a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></p>
+  </div>
+</div>
+<div id="block-system-0" class="block block-system">
+
+  <div class="content">
+    <a href="http://drupal.org"><img src="misc/powered-blue-80x15.png" alt="Powered by Drupal, an open source content management system" title="Powered by Drupal, an open source content management system" width="80" height="15" /></a>  </div>
+</div>
+</div>
+  </div>
+<!-- /layout -->
+
+  <script type="text/javascript">document.write(unescape("%3Cscript src='http://www.google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">var pageTracker = _gat._getTracker("UA-3465262-1");pageTracker._initData();pageTracker._trackPageview();</script>
+<script type="text/javascript" src="sites/jodyhamilton.net/files/js/cb369c0dce16d082bbd4d3ccca5dc1fb.js"></script>
+  </body>
+</html>

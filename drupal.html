@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>drupal | Jody Hamilton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="RSS - drupal" href="taxonomy/term/4/0/feed" />
+
+<link rel="shortcut icon" href="sites/default/files/jodyhamilton_favicon.jpg" type="image/x-icon" />
+	<meta name = "description" content = "Jody Hamilton: drupal web development, songs, and various ravings" />
+    <link type="text/css" rel="stylesheet" media="all" href="sites/jodyhamilton.net/modules/codefilter/codefilter.css%3Fu.css" />
+<link type="text/css" rel="stylesheet" media="all" href="sites/jodyhamilton.net/files/css/37ebb108063e6e407a2a8fe99a73e243.css" />
+    <script type="text/javascript" src="sites/jodyhamilton.net/files/js/32b9bb3a74dfd6d3dacfb4b06f708c5e.js"></script>
+<script type="text/javascript">jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackDownload": "pdf|zip|mp3", "LegacyVersion": 0 }, "lightbox2": { "rtl": 0, "file_path": "/(\\w\\w/)sites/jodyhamilton.net/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "display_image_size": "", "overlay_opacity": "0.6", "use_alt_layout": false, "disable_zoom": false, "force_show_nav": false, "image_node_sizes": "(\\.thumbnail)", "trigger_image_classes": "img.inline,img.flickr-photo-img,img.flickr-photoset-img,img.image-img_assist_custom,img.thumbnail, img.image-thumbnail", "group_images": true, "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "node_link_text": "View Image Details", "node_link_target": false, "image_count": "Image !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return false;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close" } });</script>
+    <!--[if lt IE 7]>
+      <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/jodyhamilton/fix-ie.css" />    <![endif]-->
+  </head>
+  <body>
+
+<!-- Layout -->
+
+    <div id="wrapper">
+     <div id="header">
+        <h1><a href="index.html" title="Jody Hamilton"><span>Jody Hamilton</span></a></h1>      </div> <!-- /header -->
+
+      <div id ="menu">
+		        <ul class="links primary-links"><li class="menu-172 first"><a href="about.html" title="About">About</a></li>
+
+<li class="menu-215 last"><a href="featured-project.html" title="">Projects</a></li>
+</ul>                                </div>
+
+      <div id="main"><div id="main-top"><div id="main-bottom">
+          <div class="breadcrumb"><a href="index.html">Home</a></div>                              <h2>drupal</h2>                                                  <div class="clear-block">
+            <div id="node-31" class="node clear-block">
+
+
+  <h2><a href="theming-sidebars-and-panels.html" title="Theming Sidebars and Panels">Theming Sidebars and Panels</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on March 12, 2008 - 12:30pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+<li class="taxonomy_term_17 last"><a href="theming.html" rel="tag" title="">theming</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>Here&#8217;s a pretty basic css technique I&#8217;ve noticed myself using a lot of lately (not at all my own invention).  The divs used as examples come from zen theme.</p>
+
+<p>Often a design calls for putting a background (or border) on a sidebar.  It should look as so:<br />
+<img src="sites/jodyhamilton.net/files/goal.jpg" alt="goal" /><br />
+If you haven&#8217;t been down this route before, you will probably try something like<br />
+<div class="codeblock"><code>#sidebar-right{<br />&nbsp; background: #123456;<br />}</code></div></p>
+  </div>
+
+  <ul class="links inline"><li class="comment_comments first"><a href="theming-sidebars-and-panels.html#comments" title="Jump to the first comment of this posting.">7 comments</a></li>
+<li class="node_read_more last"><a href="theming-sidebars-and-panels.html" title="Read the rest of Theming Sidebars and Panels.">Read more</a></li>
+</ul></div><div id="node-28" class="node clear-block">
+
+
+  <h2><a href="node-theming-field-deconstructing-node-content-drupal-5.html" title="Node theming by field: deconstructing $node-&gt;content in Drupal 5">Node theming by field: deconstructing $node-&gt;content in Drupal 5</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on February 11, 2008 - 11:53pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+<li class="taxonomy_term_17 last"><a href="theming.html" rel="tag" title="">theming</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>The CCK &#8216;display fields&#8217; settings are very useful for theming nodes by content type, but I often find myself having to get further into customizing node output field by field.</p>
+
+<p>Once I decide there&#8217;s no way getting around taking finer control of my node&#8217;s fields, I create a node-{type}.tpl.php by copying my existing node.tpl.php and open up Devel&#8217;s &#8216;Node Render&#8217; tab.  Then I delete the $content variable from the template and start adding things like <div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /> </span><span style="color: #007700">print </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'field_image'</span><span style="color: #007700">][</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]; <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div> and <div class="codeblock"><code><span style="color: #000000"><span style="color: #0000BB">&lt;?php<br /> </span><span style="color: #007700">print </span><span style="color: #0000BB">$node</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">content</span><span style="color: #007700">[</span><span style="color: #DD0000">'body'</span><span style="color: #007700">][</span><span style="color: #DD0000">'#value'</span><span style="color: #007700">]; <br /></span><span style="color: #0000BB">?&gt;</span></span></code></div> The $content variable is nice for amateurs, but we need the unrendered $node-&gt;content to get good control of a node.</p>
+
+<p>While this gives me complete control over the output of the node&#8217;s fields, the drawback is that now if I add a new field to the node, or if I add a module that adds something to $node-&gt;content, I have to go back to my template and add in this new element.  Because I often do my theming and development in parallel, this can be rather annoying, and there is also a danger that I could overlook doing it.</p>
+
+<p>Therefore I think it may be more practical to use code like this in the node template:</p>
+  </div>
+
+  <ul class="links inline"><li class="comment_comments first"><a href="node-theming-field-deconstructing-node-content-drupal-5.html#comments" title="Jump to the first comment of this posting.">18 comments</a></li>
+<li class="node_read_more last"><a href="node-theming-field-deconstructing-node-content-drupal-5.html" title="Read the rest of Node theming by field: deconstructing $node-&gt;content in Drupal 5.">Read more</a></li>
+</ul></div><div id="node-19" class="node clear-block">
+
+
+  <h2><a href="module-myaccountalter.html" title="Module: MyAccount_alter">Module: MyAccount_alter</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on February 6, 2008 - 12:19pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+<li class="taxonomy_term_9 last"><a href="featured-project.html" rel="tag" title="">featured project</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>I often find myself needing to get rid of some of the sections on Drupal&#8217;s &#8216;My Account&#8217; page.  Not every site needs it to say &#8216;History: Member for 1 day&#8217; for example, and if you use a lot of contributed modules that screen can get cluttered fast.  So this morning I got sick of dealing with it, found there is a perfectly good hook_profile_alter there to work with, and wrote a little module to let administrators disable these fields.  Let me know how you like it: <a href="http://drupal.org/project/myaccount_alter" title="http://drupal.org/project/myaccount_alter" rel="nofollow">http://drupal.org/project/myaccount_alter</a> (currently Drupal 5 only)</p>
+  </div>
+
+  <ul class="links inline"><li class="comment_comments first last"><a href="module-myaccountalter.html#comments" title="Jump to the first comment of this posting.">5 comments</a></li>
+</ul></div><div id="node-18" class="node clear-block">
+
+
+  <h2><a href="drupal-time-savers.html" title="Drupal Time-savers">Drupal Time-savers</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on February 5, 2008 - 7:35pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+<li class="taxonomy_term_14 last"><a href="taxonomy/term/14.html" rel="tag" title="">firefox</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>If you work freelance like I do, you know that time is money.  I&#8217;m always trying to shave a few more seconds off my development time.  Here are a few tips and tricks that I constantly use:</p>
+
+<ul>
+</ul>
+  </div>
+
+  <ul class="links inline"><li class="comment_comments first"><a href="drupal-time-savers.html#comments" title="Jump to the first comment of this posting.">14 comments</a></li>
+<li class="node_read_more last"><a href="drupal-time-savers.html" title="Read the rest of Drupal Time-savers.">Read more</a></li>
+</ul></div><div id="node-16" class="node clear-block">
+
+
+  <h2><a href="project-cfdvorg.html" title="Project: cfdv.org">Project: cfdv.org</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on February 3, 2008 - 2:08pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+<li class="taxonomy_term_9"><a href="featured-project.html" rel="tag" title="">featured project</a></li>
+<li class="taxonomy_term_8 last"><a href="jquery.html" rel="tag" title="">jquery</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p><a href="http://cfdv.org" rel="nofollow">CFDV.org</a> is the website for the <em>The Chromatography Forum of Delaware Valley</em>.  Chromatography is a discipline of chemistry which is used to separate mixtures for analysis.  For example, when your aspirin is tested to be 99.7% pure that was determined with chromatography by an analytical chemist.  Likewise when your urine is tested to contain marijuana that was also determined by chromatography.  Chromatography is a complex science and is used extensively in the pharmaceutical industry- an industry which has a large presence in the Delaware Valley.</p>
+  </div>
+
+  <ul class="links inline"><li class="comment_add first"><a href="comment/reply/16.html#comment-form" title="Add a new comment to this page.">Add new comment</a></li>
+<li class="node_read_more last"><a href="project-cfdvorg.html" title="Read the rest of Project: cfdv.org.">Read more</a></li>
+</ul></div><div id="node-8" class="node clear-block">
+
+
+  <h2><a href="project-onlyalumnicom.html" title="Project: OnlyAlumni.com">Project: OnlyAlumni.com</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on January 24, 2008 - 11:38am</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+<li class="taxonomy_term_9"><a href="featured-project.html" rel="tag" title="">featured project</a></li>
+<li class="taxonomy_term_5 last"><a href="lullabot.html" rel="tag" title="">lullabot</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>One project I&#8217;m currently working on which is already live is <a href="http://onlyalumni.com" rel="nofollow">OnlyAlummni.com</a>.</p>
+
+<p>Instead of having to build the entire site, I have a smart client who set up the site and had me work only on the trickier (fun) parts of this project.  OnlyAlumni is a social networking site with about 8000 colleges, fraternities and sororities which operate as Drupal organic groups.  This has been a great project for me to go much more in depth with <a href="http://drupal.org/project/og" rel="nofollow">organic groups</a> and related modules.</p>
+  </div>
+
+  <ul class="links inline"><li class="comment_add first"><a href="comment/reply/8.html#comment-form" title="Add a new comment to this page.">Add new comment</a></li>
+<li class="node_read_more last"><a href="project-onlyalumnicom.html" title="Read the rest of Project: OnlyAlumni.com.">Read more</a></li>
+</ul></div><div id="node-6" class="node clear-block">
+
+
+  <h2><a href="teleport-module.html" title="Teleport module">Teleport module</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on January 22, 2008 - 6:58pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first last active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>I am loving this drupal 6 <a href="http://drupal.org/project/teleport" rel="nofollow">teleport module</a>.  Thank you &#8216;incidentist&#8217;.  It really is quicksilver for drupal.  You type in a few letters and it autocompletes paths you might want to visit- no mouse involved.  For example, to post this story I pressed ctrl-T &#8216;stor&#8217; enter-enter, and it took me to node/add/story.  </p>
+
+<p><a href="http://drupal.org/project/admin_menu" rel="nofollow">Admin_menu</a>: my loyalties have shifted.  Our time together was pretty good, but you can&#8217;t compete with keyboard shortcuts.</p>
+  </div>
+
+  <ul class="links inline"><li class="comment_add first last"><a href="comment/reply/6.html#comment-form" title="Add a new comment to this page.">Add new comment</a></li>
+</ul></div><div id="node-3" class="node clear-block">
+
+
+  <h2><a href="lullabot-trip-portland.html" title="Lullabot trip - Portland">Lullabot trip - Portland</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on January 14, 2008 - 2:46pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+<li class="taxonomy_term_5 last"><a href="lullabot.html" rel="tag" title="">lullabot</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>I just got back from Portland where I took <a href="http://lullabot.com" rel="nofollow">Lullabot</a>&#8217;s advanced drupal development course.  Not only did the class take me to a wild new level of Drupalhood, but I was blown away by how great a city Portland is.  It made me feel the intense masochism of the act of living in Philadelphia.  Every detail was greeting me with unexpected good things, as opposed to Philly where every detail is just another slap in the face.  Free fast wireless in their airport.  Spotless trains coming every five minutes and asking you to pay on the honor system.</p>
+  </div>
+
+  <ul class="links inline"><li class="comment_comments first"><a href="lullabot-trip-portland.html#comments" title="Jump to the first comment of this posting.">1 comment</a></li>
+<li class="node_read_more last"><a href="lullabot-trip-portland.html" title="Read the rest of Lullabot trip - Portland.">Read more</a></li>
+</ul></div><div id="node-1" class="node clear-block">
+
+
+  <h2><a href="new-site.html" title="New Site">New Site</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Submitted by jody on December 27, 2007 - 11:35pm</span>
+  
+      <div class="terms"><ul class="links inline"><li class="taxonomy_term_4 first last active"><a href="drupal.html" rel="tag" title="" class="active">drupal</a></li>
+</ul></div>
+    </div>
+
+  <div class="content">
+    <p>Over the past year I&#8217;ve devoted myself to <a href="http://drupal.org" rel="nofollow">drupal</a> development and a new site made in drupal has been long overdue.</p>
+
+<p>This site is freshly built in Drupal 6 (currently in Release Candidate 1).  It took about three hours to build (the majority of that was the design work) - Drupal 6 is even faster to set up than Drupal 5.</p>
+
+<p>I plan to bring in the best of my music and comics from previous incarnations of my website, and also use this site as part random blog and part drupal-related work portfolio.</p>
+  </div>
+
+  <ul class="links inline"><li class="comment_add first last"><a href="comment/reply/1.html#comment-form" title="Add a new comment to this page.">Add new comment</a></li>
+</ul></div>          </div>
+          
+      </div></div></div>
+
+        <div id="sidebar-right">
+          <!-- <div class="block block-theme"><form action="/drupal"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit-1" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-4edce6842d28d89263c51b2671158646" value="form-4edce6842d28d89263c51b2671158646"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+</div>
+
+</div></form>
+</div> -->
+          <div id="block-tagadelic-1" class="block block-tagadelic">
+
+  <div class="content">
+    <a href="amateur-philosophy.html" class="tagadelic level2">amateur philosophy</a> 
+<a href="business.html" class="tagadelic level1">business</a> 
+<a href="comics.html" class="tagadelic level2">comics</a> 
+<a href="downloads.html" class="tagadelic level4">downloads</a> 
+<a href="drupal.html" class="tagadelic level6">drupal</a> 
+<a href="featured-project.html" class="tagadelic level3">featured project</a> 
+<a href="taxonomy/term/14.html" class="tagadelic level1">firefox</a> 
+<a href="jody-hamiltons.html" class="tagadelic level2">jody hamiltons</a> 
+<a href="jquery.html" class="tagadelic level3">jquery</a> 
+<a href="lullabot.html" class="tagadelic level2">lullabot</a> 
+<a href="music.html" class="tagadelic level6">music</a> 
+<a href="ravings.html" class="tagadelic level1">ravings</a> 
+<a href="rifle-nice.html" class="tagadelic level4">rifle nice</a> 
+<a href="theming.html" class="tagadelic level2">theming</a> 
+<a href="zivtech.html" class="tagadelic level1">zivtech</a> 
+<div class='more-link'><a href="tagadelic/chunk/1.html">more tags</a></div>  </div>
+</div>
+<div id="block-search-0" class="block block-search">
+
+  <div class="content">
+    <form action="drupal.html"  accept-charset="UTF-8" method="post" id="search-block-form">
+<div><div class="container-inline">
+  <div class="form-item" id="edit-search-block-form-1-wrapper">
+ <label for="edit-search-block-form-1">Search this site: </label>
+ <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="10" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-28033ae3d701bc8a9580d866b610d66a" value="form-28033ae3d701bc8a9580d866b610d66a"  />
+<input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"  />
+</div>
+
+</div></form>
+  </div>
+</div>
+<div id="block-aggregator-feed-3" class="block block-aggregator">
+  <h2>My Work Blog</h2>
+
+  <div class="content">
+    <div class="item-list"><ul><li class="first"><a href="http://www.zivtech.com/blog/zivtech-welcomes-new-creative-director">Zivtech welcomes new Creative Director</a>
+</li>
+<li class="last"><a href="http://www.zivtech.com/blog/use-cck-link-and-filefields-redirects-legacy-content">Use CCK link and filefields as redirects to legacy content</a>
+</li>
+</ul></div><div class="more-link"><a href="aggregator/sources/3.html" title="View this feed&#039;s recent news.">more</a></div>  </div>
+</div>
+        </div>
+       	<a href="taxonomy/term/4/0/feed" class="feed-icon"><img src="misc/feed.png" alt="Syndicate content" title="RSS - drupal" width="16" height="16" /></a>        <div id="footer"><div id="block-block-2" class="block block-block">
+
+  <div class="content">
+    <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a><a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></p>
+  </div>
+</div>
+<div id="block-system-0" class="block block-system">
+
+  <div class="content">
+    <a href="http://drupal.org"><img src="misc/powered-blue-80x15.png" alt="Powered by Drupal, an open source content management system" title="Powered by Drupal, an open source content management system" width="80" height="15" /></a>  </div>
+</div>
+</div>
+  </div>
+<!-- /layout -->
+
+  <script type="text/javascript">document.write(unescape("%3Cscript src='http://www.google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">var pageTracker = _gat._getTracker("UA-3465262-1");pageTracker._initData();pageTracker._trackPageview();</script>
+<script type="text/javascript" src="sites/jodyhamilton.net/files/js/cb369c0dce16d082bbd4d3ccca5dc1fb.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://jodyhamilton.net"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Jody Hamilton - theming</title>
+ <link>http://jodyhamilton.net/taxonomy/term/17/0</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Theming Sidebars and Panels</title>
+ <link>http://jodyhamilton.net/theming-sidebars-and-panels</link>
+ <description>&lt;p&gt;Here&amp;#8217;s a pretty basic css technique I&amp;#8217;ve noticed myself using a lot of lately (not at all my own invention).  The divs used as examples come from zen theme.&lt;/p&gt;
+
+&lt;p&gt;Often a design calls for putting a background (or border) on a sidebar.  It should look as so:&lt;br /&gt;
+&lt;img src=&quot;/sites/jodyhamilton.net/files/goal.jpg&quot; alt=&quot;goal&quot; /&gt;&lt;br /&gt;
+If you haven&amp;#8217;t been down this route before, you will probably try something like&lt;br /&gt;
+&lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;#sidebar-right{&lt;br /&gt;&amp;nbsp; background: #123456;&lt;br /&gt;}&lt;/code&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/theming-sidebars-and-panels&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/theming-sidebars-and-panels#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/theming">theming</category>
+ <pubDate>Wed, 12 Mar 2008 12:30:09 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">31 at http://jodyhamilton.net</guid>
+</item>
+<item>
+ <title>Node theming by field: deconstructing $node-&gt;content in Drupal 5</title>
+ <link>http://jodyhamilton.net/node-theming-field-deconstructing-node-content-drupal-5</link>
+ <description>&lt;p&gt;The CCK &amp;#8216;display fields&amp;#8217; settings are very useful for theming nodes by content type, but I often find myself having to get further into customizing node output field by field.&lt;/p&gt;
+
+&lt;p&gt;Once I decide there&amp;#8217;s no way getting around taking finer control of my node&amp;#8217;s fields, I create a node-{type}.tpl.php by copying my existing node.tpl.php and open up Devel&amp;#8217;s &amp;#8216;Node Render&amp;#8217; tab.  Then I delete the $content variable from the template and start adding things like &lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;&lt;span style=&quot;color: #000000&quot;&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;&amp;lt;?php&lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;print &lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;$node&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;content&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;field_image&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;][&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;#value&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;]; &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/div&gt; and &lt;div class=&quot;codeblock&quot;&gt;&lt;code&gt;&lt;span style=&quot;color: #000000&quot;&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;&amp;lt;?php&lt;br /&gt; &lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;print &lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;$node&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;content&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;body&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;][&lt;/span&gt;&lt;span style=&quot;color: #DD0000&quot;&gt;&#039;#value&#039;&lt;/span&gt;&lt;span style=&quot;color: #007700&quot;&gt;]; &lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;color: #0000BB&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/div&gt; The $content variable is nice for amateurs, but we need the unrendered $node-&amp;gt;content to get good control of a node.&lt;/p&gt;
+
+&lt;p&gt;While this gives me complete control over the output of the node&amp;#8217;s fields, the drawback is that now if I add a new field to the node, or if I add a module that adds something to $node-&amp;gt;content, I have to go back to my template and add in this new element.  Because I often do my theming and development in parallel, this can be rather annoying, and there is also a danger that I could overlook doing it.&lt;/p&gt;
+
+&lt;p&gt;Therefore I think it may be more practical to use code like this in the node template:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/node-theming-field-deconstructing-node-content-drupal-5&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://jodyhamilton.net/node-theming-field-deconstructing-node-content-drupal-5#comments</comments>
+ <category domain="http://jodyhamilton.net/drupal">drupal</category>
+ <category domain="http://jodyhamilton.net/theming">theming</category>
+ <pubDate>Mon, 11 Feb 2008 23:53:52 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">28 at http://jodyhamilton.net</guid>
+</item>
+</channel>
+</rss>

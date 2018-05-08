@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://jodyhamilton.net"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Jody Hamilton - business</title>
+ <link>http://jodyhamilton.net/taxonomy/term/19/0</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>New Business: Zivtech</title>
+ <link>http://jodyhamilton.net/new-business-zivtech</link>
+ <description>&lt;p&gt;I came to web development in June 2006 as an intern at &lt;a href=&quot;http://canarypromo.com&quot;&gt;Canary Promo+Design&lt;/a&gt;.  That December I worked on &lt;a href=&quot;http://phillyjcc.com&quot; rel=&quot;nofollow&quot;&gt;our first Drupal site&lt;/a&gt; and never looked back.&lt;/p&gt;
+
+&lt;p&gt;Since then I have been working on Drupal fulltime as a freelancer, both building sites and consulting.  Needless to say in the past two years my skills have grown considerably, thanks to the amazing power of passionate self-education and in large part to the extraordinary cumulative efforts of the Drupal developers and other web folk who post helpful tips to the internet.  &lt;/p&gt;
+
+&lt;p&gt;As a bit of a freedom-freak, I have enjoyed freelancing very much.  While working in the corporate world made me depressed and lazy, working freelance pushed me to my mental limit on a continuous basis.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://jodyhamilton.net/new-business-zivtech&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <category domain="http://jodyhamilton.net/business">business</category>
+ <category domain="http://jodyhamilton.net/zivtech">zivtech</category>
+ <pubDate>Wed, 09 Apr 2008 10:43:51 -0500</pubDate>
+ <dc:creator>jody</dc:creator>
+ <guid isPermaLink="false">32 at http://jodyhamilton.net</guid>
+</item>
+</channel>
+</rss>

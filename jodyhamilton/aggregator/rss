@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+ <title>Jody Hamilton aggregator</title>
+ <link>http://jodyhamilton.net/aggregator</link>
+ <description>Jody Hamilton - aggregated feeds</description>
+ <language>en</language>
+<item>
+ <title>Jody Zivtech Feed: Zivtech welcomes new Creative Director</title>
+ <link>http://www.zivtech.com/blog/zivtech-welcomes-new-creative-director</link>
+ <description>&lt;p&gt;We&#039;re pleased to announce Mason Wendell has joined our team as Zivtech&#039;s new Creative Director. Mason, who previously was co-owner of &lt;a href=&quot;http://canarypromo.com&quot;&gt;Canary Promotion + Design&lt;/a&gt;, we&#039;ve long seen as a leading Drupal web designer and our ideal creative director. This addition marks a big, exciting change for us, as Mason will lead our design department, expanding our services.  I originally got started with web development as an intern for Mason, working on the PHP, MySQL and CSS of his custom CMS.&lt;p&gt;&lt;a href=&quot;http://www.zivtech.com/blog/zivtech-welcomes-new-creative-director&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;
+</description>
+ <pubDate>Wed, 07 Jul 2010 15:34:38 -0400</pubDate>
+</item>
+<item>
+ <title>Jody Zivtech Feed: Use CCK link and filefields as redirects to legacy content</title>
+ <link>http://www.zivtech.com/blog/use-cck-link-and-filefields-redirects-legacy-content</link>
+ <description>&lt;p&gt;We&#039;re working on a project with too much non-uniform legacy HTML to migrate it all into Drupal. Some of it we&#039;re handling by migrating certain data into nodes and dumping the entire HTML content into the node body so it can be easily indexed by Solr for search and the titles can be included in other views listings.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zivtech.com/blog/use-cck-link-and-filefields-redirects-legacy-content&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+ <pubDate>Mon, 07 Jun 2010 13:13:27 -0400</pubDate>
+</item>
+</channel>
+</rss>

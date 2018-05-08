@@ -1,0 +1,58 @@
+
+#binding, #binding2, #binding3, #binding4
+		{
+			position: relative;
+			height: 728px;
+		}
+
+		
+		.magnifier
+		{
+			position: absolute;
+			border: solid 1px #000;
+			cursor: move;
+			background-repeat: no-repeat;
+			background-color: #fff;
+			top: 0;
+			left: 0;
+			
+		}
+		
+		
+		.magnifierController
+		{
+			color: #999;
+			font-family: Trebuchet MS, Verdana, sans-serif;
+			font-size: 10pt;
+		}
+		
+		.magnifierControllerContainer
+		{
+			padding: 10px;
+		}
+
+		.magnifierControllerPrefix
+		{
+			color: #111;
+		}
+		
+		.magnifierControllerButton
+		{
+			color: #666;
+			cursor: pointer; cursor: hand;
+			background-color: #eee;
+			border: solid 1px #ddd;
+			padding: 0px 4px 0px 4px;
+			/*text-shadow: dimgray 0px 0px 3px;*/
+		}
+		
+		.magnifierControllerButtonSelected
+		{
+			background-color: #ccc;
+			border: solid 1px #aaa;
+			color: #333;
+			font-weight: bold;
+			cursor: pointer; cursor: hand;
+			padding: 0px 4px 0px 4px;
+			/*text-shadow: dimgray 0px 0px 3px;*/
+		}
